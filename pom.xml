@@ -4,11 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.geekidentity</groupId>
 	<artifactId>showcase</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${showcase.version}</version>
 	<packaging>pom</packaging>
 	<description>聚合POM，</description>
 
 	<properties>
+		<mybatis.version>3.4.2</mybatis.version>
+		<showcase.version>0.0.1-SNAPSHOT</showcase.version>
 		<hibernate.version>5.2.6.Final</hibernate.version>
 		<spring.version>4.3.4.RELEASE</spring.version>
 		<jdk.version>1.8</jdk.version>
@@ -25,7 +27,29 @@
 				<scope>provided</scope>
 			</dependency>
 
-			<!-- Spring BEGIN -->
+			<!-- showcase BEGIN -->
+			<dependency>
+				<groupId>com.geekidentity</groupId>
+				<artifactId>showcase</artifactId>
+				<version>${showcase.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.geekidentity</groupId>
+				<artifactId>showcase-biz-api</artifactId>
+				<version>${showcase.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.geekidentity</groupId>
+				<artifactId>showcase-biz-mybatis</artifactId>
+				<version>${showcase.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.geekidentity</groupId>
+				<artifactId>showcase-biz-hibernate</artifactId>
+				<version>${showcase.version}</version>
+			</dependency>
+			<!-- showcase BEGIN -->
+
 			<!-- Spring BEGIN -->
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -51,6 +75,7 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-test</artifactId>
 				<version>${spring.version}</version>
+				<scope>test</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -87,6 +112,15 @@
 				<version>${hibernate.version}</version>
 			</dependency>
 			<!-- Hibernate END -->
+
+			<!-- Mybatis BEGIN -->
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>${mybatis.version}</version>
+			</dependency>
+
+			<!-- Mybatis END -->
 		</dependencies>
 	</dependencyManagement>
 
@@ -113,8 +147,8 @@
 	</build>
 	<modules>
 		<module>showcase-biz-api</module>
-		<module>showcase-biz</module>
 		<module>showcase-web</module>
 		<module>showcase-biz-mybatis</module>
+		<module>showcase-biz-hibernate</module>
 	</modules>
 </project>
