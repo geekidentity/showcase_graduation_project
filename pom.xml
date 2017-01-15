@@ -9,7 +9,7 @@
 	<description>聚合POM，</description>
 
 	<properties>
-		<hibernate.version>5.1.0.Final</hibernate.version>
+		<hibernate.version>5.2.6.Final</hibernate.version>
 		<spring.version>4.3.4.RELEASE</spring.version>
 		<jdk.version>1.8</jdk.version>
 
