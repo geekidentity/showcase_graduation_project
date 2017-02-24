@@ -13,6 +13,16 @@
 	<name>geekidentity-web Maven Webapp</name>
 	<url>http://geekidentity.com</url>
 	<dependencies>
+
+		<dependency>
+			<groupId>com.geekidentity</groupId>
+			<artifactId>showcase-biz-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.geekidentity</groupId>
+			<artifactId>showcase-biz-mybatis</artifactId>
+		</dependency>
+		<!-- Spring BEGIN -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -33,6 +43,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 		</dependency>
+		<!-- Spring END -->
 	</dependencies>
 	<build>
 		<finalName>geekidentity-web</finalName>

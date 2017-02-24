@@ -48,7 +48,7 @@
 				<artifactId>showcase-biz-hibernate</artifactId>
 				<version>${showcase.version}</version>
 			</dependency>
-			<!-- showcase BEGIN -->
+			<!-- showcase END -->
 
 			<!-- Spring BEGIN -->
 			<dependency>
@@ -149,6 +149,6 @@
 		<module>showcase-biz-api</module>
 		<module>showcase-web</module>
 		<module>showcase-biz-mybatis</module>
-		<module>showcase-biz-hibernate</module>
+		
 	</modules>
 </project>
