@@ -148,6 +148,20 @@
 
 			<!-- Database END -->
 
+			<!-- Office BEGIN -->
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi</artifactId>
+				<version>3.15</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml</artifactId>
+				<version>3.15</version>
+			</dependency>
+
+			<!-- Office END -->
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -178,5 +192,6 @@
 		<module>showcase-biz-mybatis</module>
 
 		<module>showcase-datacastle</module>
+		<module>showcase-Excel</module>
 	</modules>
 </project>
