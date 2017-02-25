@@ -149,6 +149,7 @@
 		<module>showcase-biz-api</module>
 		<module>showcase-web</module>
 		<module>showcase-biz-mybatis</module>
-		
+
+		<module>showcase-datacastle</module>
 	</modules>
 </project>
