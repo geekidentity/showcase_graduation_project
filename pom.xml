@@ -192,6 +192,6 @@
 		<module>showcase-biz-mybatis</module>
 
 		<module>showcase-datacastle</module>
-		<module>showcase-Excel</module>
+		<module>showcase-excel</module>
 	</modules>
 </project>
