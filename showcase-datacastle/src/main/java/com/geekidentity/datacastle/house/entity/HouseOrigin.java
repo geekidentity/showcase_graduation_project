@@ -12,7 +12,7 @@ import com.geekidentity.excel.CellStyle;
  * @version 1.0
  *
  */
-@Entity(name="house")
+@Entity(name="houseOrigin")
 public class HouseOrigin {
 	@Id
 	@CellStyle(title = "ID")
