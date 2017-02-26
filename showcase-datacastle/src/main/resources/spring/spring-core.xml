@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
 
 	<!-- 使用注解自动注册和注入Bean， -->
@@ -11,14 +14,16 @@
 
 	<context:property-placeholder location="classpath*:app.properties" />
 
-	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		destroy-method="close">
 		<property name="driverClassName" value="${jdbc.driverClassName}" />
 		<property name="url" value="${jdbc.url}" />
 		<property name="username" value="${jdbc.username}" />
 		<property name="password" value="${jdbc.password}" />
 	</bean>
-	
-	<bean id="sessionFactory"  class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="hibernateProperties">
 			<props>
@@ -26,7 +31,7 @@
 				<prop key="hibernate.jdbc.batch_size">50</prop>
 				<prop key="hibernate.jdbc.fetch_size">50</prop>
 				<prop key="hibernate.order_inserts">true</prop>
-				<prop key="hibernate.order_updates">true</prop> 
+				<prop key="hibernate.order_updates">true</prop>
 				<prop key="hibernate.cache.use_second_level_cache">true</prop>
 				<prop key="hibernate.cache.use_query_cache">false</prop>
 				<prop key="hibernate.generate_statistics">false</prop>
@@ -42,5 +47,12 @@
 			</list>
 		</property>
 	</bean>
-	<bean id="improvedNamingStrategy" class="org.hibernate.cfg.ImprovedNamingStrategy"/>
+
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+
+	<bean id="improvedNamingStrategy" class="org.hibernate.cfg.ImprovedNamingStrategy" />
 </beans>

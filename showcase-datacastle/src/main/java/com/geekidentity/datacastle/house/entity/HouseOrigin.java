@@ -3,6 +3,8 @@ package com.geekidentity.datacastle.house.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import com.geekidentity.excel.CellStyle;
+
 /**
  * 
  * @author geekidentity
@@ -13,34 +15,52 @@ import javax.persistence.Id;
 @Entity(name="house")
 public class HouseOrigin {
 	@Id
+	@CellStyle(title = "ID")
 	private Integer id;
+	@CellStyle(title = "名称")
 	private String name;
 	//参考均价
+	@CellStyle(title = "参考均价")
 	private String referencePrice;
 	//建筑类别
+	@CellStyle(title = "建筑类别")
 	private String buildingCategory;
 	//项目地址
+	@CellStyle(title = "项目地址")
 	private String projectAddress;
 	//总户数（单位：户）
-	private Integer totalHouses;
+	@CellStyle(title = "总户数")
+	private String totalHouses;
 	//建筑面积（单位：平方米）
-	private Integer constructionArea;
+	@CellStyle(title = "建筑面积")
+	private String constructionArea;
 	//车位信息
-	private Double greenRate;
+	@CellStyle(title = "车位信息")
+	private String parkingInfo;
+	//绿化率
+	@CellStyle(title = "绿化率")
+	private String greenRate;
 	//容积率
-	private Double volumeRate;
+	@CellStyle(title = "容积率")
+	private String volumeRate;
 	//开放商
+	@CellStyle(title = "开放商")
 	private String openBusinessman;
 	//物业公司
+	@CellStyle(title = "物业公司")
 	private String propertyCompany;
 	//物业类型
+	@CellStyle(title = "物业类型")
 	private String propertyType;
 	//装修情况
+	@CellStyle(title = "装修情况")
 	private String decorationSituation;
 	//户型区间
+	@CellStyle(title = "户型区间")
 	private String unitRange;
 	//物业费
-	private Double propertyCosts;
+	@CellStyle(title = "物业费")
+	private String propertyCosts;
 	public Integer getId() {
 		return id;
 	}
@@ -71,29 +91,29 @@ public class HouseOrigin {
 	public void setProjectAddress(String projectAddress) {
 		this.projectAddress = projectAddress;
 	}
-	public Integer getTotalHouses() {
+	public String getTotalHouses() {
 		return totalHouses;
 	}
-	public void setTotalHouses(Integer totalHouses) {
+	public void setTotalHouses(String totalHouses) {
 		this.totalHouses = totalHouses;
 	}
-	public Integer getConstructionArea() {
+	public String getConstructionArea() {
 		return constructionArea;
 	}
-	public void setConstructionArea(Integer constructionArea) {
+	public void setConstructionArea(String constructionArea) {
 		this.constructionArea = constructionArea;
 	}
-	public Double getGreenRate() {
+	public String getParkingInfo() {
+		return parkingInfo;
+	}
+	public void setParkingInfo(String parkingInfo) {
+		this.parkingInfo = parkingInfo;
+	}
+	public String getGreenRate() {
 		return greenRate;
 	}
-	public void setGreenRate(Double greenRate) {
+	public void setGreenRate(String greenRate) {
 		this.greenRate = greenRate;
-	}
-	public Double getVolumeRate() {
-		return volumeRate;
-	}
-	public void setVolumeRate(Double volumeRate) {
-		this.volumeRate = volumeRate;
 	}
 	public String getOpenBusinessman() {
 		return openBusinessman;
@@ -125,10 +145,16 @@ public class HouseOrigin {
 	public void setUnitRange(String unitRange) {
 		this.unitRange = unitRange;
 	}
-	public Double getPropertyCosts() {
+	public String getVolumeRate() {
+		return volumeRate;
+	}
+	public void setVolumeRate(String volumeRate) {
+		this.volumeRate = volumeRate;
+	}
+	public String getPropertyCosts() {
 		return propertyCosts;
 	}
-	public void setPropertyCosts(Double propertyCosts) {
+	public void setPropertyCosts(String propertyCosts) {
 		this.propertyCosts = propertyCosts;
 	}
 	

@@ -9,6 +9,11 @@
 	<artifactId>showcase-datacastle</artifactId>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.geekidentity</groupId>
+			<artifactId>showcase-excel</artifactId>
+			<version>${showcase.version}</version>
+		</dependency>
 		<!-- Spring BEGIN -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -55,5 +60,25 @@
 		</dependency>
 
 		<!-- Hibernate END -->
+		<!-- Office BEGIN -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+		</dependency>
+
+		<!-- Office END -->
+
+		<!-- Tools BEGIN -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
+		<!-- Tools END -->
+
 	</dependencies>
 </project>
