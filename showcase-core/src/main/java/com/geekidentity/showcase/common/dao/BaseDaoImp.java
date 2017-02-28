@@ -1,4 +1,4 @@
-package com.geekidentity.datacastle.common.dao;
+package com.geekidentity.showcase.common.dao;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -11,6 +11,8 @@ import org.hibernate.type.Type;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
+
+import com.geekidentity.showcase.common.query.Page;
 
 public abstract class BaseDaoImp<T> extends HibernateDaoSupport implements BaseDao<T> {
 	

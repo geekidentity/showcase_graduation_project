@@ -1,4 +1,4 @@
-package com.geekidentity.datacastle.common.dao;
+package com.geekidentity.showcase.common.query;
 
 import java.util.ArrayList;
 import java.util.List;

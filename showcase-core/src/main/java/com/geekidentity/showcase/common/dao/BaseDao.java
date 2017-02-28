@@ -1,4 +1,4 @@
-package com.geekidentity.datacastle.common.dao;
+package com.geekidentity.showcase.common.dao;
 
 
 import java.io.Serializable;
@@ -10,6 +10,8 @@ import org.hibernate.Criteria;
 import org.hibernate.Hibernate;
 import org.hibernate.sql.QuerySelect;
 import org.hibernate.type.Type;
+
+import com.geekidentity.showcase.common.query.Page;
 
 /**
  * 基础数据存取对象接口

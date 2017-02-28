@@ -14,6 +14,11 @@
 			<artifactId>showcase-excel</artifactId>
 			<version>${showcase.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.geekidentity</groupId>
+			<artifactId>showcase-core</artifactId>
+			<version>${showcase.version}</version>
+		</dependency>
 		<!-- Spring BEGIN -->
 		<dependency>
 			<groupId>org.springframework</groupId>
