@@ -201,5 +201,6 @@
 
 		<module>showcase-datacastle</module>
 		<module>showcase-excel</module>
+		<module>showcase-core</module>
 	</modules>
 </project>
