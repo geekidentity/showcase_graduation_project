@@ -1,5 +1,8 @@
 package com.geekidentity.datacastle.company.service;
 
-public class CompanyRegistrationService {
+import com.geekidentity.datacastle.company.entity.CompanyRegistration;
+import com.geekidentity.showcase.common.service.BaseService;
+
+public interface CompanyRegistrationService extends BaseService<CompanyRegistration> {
 	
 }

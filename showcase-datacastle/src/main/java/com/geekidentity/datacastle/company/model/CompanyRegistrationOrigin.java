@@ -1,8 +1,5 @@
 package com.geekidentity.datacastle.company.model;
 
-import javax.persistence.Entity;
-
-@Entity
 public class CompanyRegistrationOrigin {
 	private Id _id;
 	private String province;

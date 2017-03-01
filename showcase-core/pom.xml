@@ -44,5 +44,13 @@
 		</dependency>
 
 		<!-- Hibernate END -->
+		
+		<!-- Tools BEGIN -->
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+		</dependency>
+		<!-- Tools END -->
+				
 	</dependencies>
 </project>

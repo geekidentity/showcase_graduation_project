@@ -6,10 +6,24 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.geekidentity.showcase.common.dao.BaseDao;
 import com.geekidentity.showcase.common.query.Page;
 
+/**
+ * 基础数据存取对象实现类
+ * @author geekidentity
+ * @date 2017年3月1日
+ * @version 1.0
+ *
+ * @param <T>
+ */
 public class BaseServiceImp<T> implements BaseService<T> {
-
+	
+	@Autowired
+	
+	protected BaseDao<T> baseDao;
 	@Override
 	public T get(Serializable id) {
 		// TODO Auto-generated method stub
@@ -66,7 +80,7 @@ public class BaseServiceImp<T> implements BaseService<T> {
 
 	@Override
 	public void batchSave(Collection<T> transientInstances) {
-		// TODO Auto-generated method stub
+		baseDao.batchSave(transientInstances);
 		
 	}
 

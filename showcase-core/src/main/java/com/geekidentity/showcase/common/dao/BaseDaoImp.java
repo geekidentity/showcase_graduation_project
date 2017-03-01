@@ -5,21 +5,22 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.collections.CollectionUtils;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.sql.QuerySelect;
 import org.hibernate.type.Type;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.orm.hibernate5.HibernateCallback;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 import com.geekidentity.showcase.common.query.Page;
 
 public abstract class BaseDaoImp<T> extends HibernateDaoSupport implements BaseDao<T> {
 	
-	private HibernateTemplate template;
 	
 	public BaseDaoImp() {
-		template = getHibernateTemplate();
 	}
 	
 	@Autowired
@@ -64,14 +65,30 @@ public abstract class BaseDaoImp<T> extends HibernateDaoSupport implements BaseD
 
 	@Override
 	public void batchSaveOrUpdate(Collection<T> instances) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void batchSave(Collection<T> transientInstances) {
-		// TODO Auto-generated method stub
-		
+		getHibernateTemplate().executeWithNativeSession(new HibernateCallback<T>() {
+
+			@Override
+			public T doInHibernate(Session session) throws HibernateException {
+				if (!CollectionUtils.isEqualCollection(transientInstances, CollectionUtils.EMPTY_COLLECTION)) {
+					int max = CollectionUtils.size(transientInstances);
+					int i = 0;
+					for (T t : transientInstances) {
+						session.save(t);
+						if ((i != 0 && i % 30 == 0) || i == max -1) {
+							session.flush();
+							session.clear();
+						}
+						i++;
+					}
+				}
+				return null;
+			}
+			
+		});
 	}
 
 	@Override

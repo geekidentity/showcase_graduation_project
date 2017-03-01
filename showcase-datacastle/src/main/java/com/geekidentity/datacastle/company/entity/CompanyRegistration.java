@@ -2,13 +2,14 @@ package com.geekidentity.datacastle.company.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-
-import com.geekidentity.datacastle.company.model.Id;
+import javax.persistence.Id;
 
 @Entity
 public class CompanyRegistration {
-	private Id id;
+	@Id
+	private String id;
 	private String province;
 	private String city;
 	private String license;
@@ -16,6 +17,7 @@ public class CompanyRegistration {
 	private String orgCode;
 	private String housingFund;
 	private Date acceptDate;
+	@Column(columnDefinition="TEXT")
 	private String businessScope;
 	private String companyType;
 	private Date registerDate;
@@ -24,15 +26,17 @@ public class CompanyRegistration {
 	private String keywords;
 	private String sizhongTag;
 	private String companyAddress;
+	@Column(columnDefinition="TEXT")
 	private String details;
 	private String registerCapital;
 	private String socialInsurance;
 	private String registerGov;
 	private String artificialPerson;
-	public Id getId() {
+	
+	public String getId() {
 		return id;
 	}
-	public void setId(Id id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getProvince() {
