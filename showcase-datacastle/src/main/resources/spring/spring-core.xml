@@ -53,6 +53,28 @@
 	</bean>
 	
 	<tx:annotation-driven transaction-manager="transactionManager"/>
+	
+	<!-- 定义事务管理器 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="find*" read-only="true" />
+			<tx:method name="search*" read-only="true" />
+			<tx:method name="select*" read-only="true" />
+			<tx:method name="create*" />
+			<tx:method name="generate*" />
+			<tx:method name="execute*" />
+			<tx:method name="save*" />
+			<tx:method name="update*" />
+			<tx:method name="delete*" />
+			<tx:method name="remove*" />
+			<tx:method name="batch*" />
+			<tx:method name="execute*" />
+			<tx:method name="upload*" />
+			<tx:method name="change*" />
+			<tx:method name="*" />
+		</tx:attributes>
+	</tx:advice>
 
 	<bean id="improvedNamingStrategy" class="org.hibernate.cfg.ImprovedNamingStrategy" />
 </beans>
