@@ -11,5 +11,8 @@ public class BeanUtilTest {
 		String underlineName = "get_User_name";
 		String result = BeanUtil.getCamelNameByUnderline(underlineName);
 		assertEquals("getUserName", result);
+		
+		String id = "_id";
+		assertEquals("id", BeanUtil.getCamelNameByUnderline(id));
 	}
 }
