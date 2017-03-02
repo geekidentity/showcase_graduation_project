@@ -38,7 +38,6 @@ public class BeanUtil extends BeanUtils {
 						targetField.set(target, field.get(origin));
 					} catch (IllegalArgumentException | IllegalAccessException e) {
 						// TODO Auto-generated catch block
-						e.printStackTrace();
 					}
 				}
 			}
@@ -95,12 +94,13 @@ public class BeanUtil extends BeanUtils {
 	 * @return
 	 */
 	public static Field getField(Object o, String name) {
-		try {
-			return o.getClass().getDeclaredField(name);
-		} catch (Throwable e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			try {
+				return o.getClass().getDeclaredField(name);
+			} catch (NoSuchFieldException e) {
+				// TODO Auto-generated catch block
+			} catch (SecurityException e) {
+				// TODO Auto-generated catch block
+			}
 		return null;
 	}
 }

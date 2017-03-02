@@ -23,7 +23,7 @@ public class CompanyRegistration {
 	private Date registerDate;
 	private String phone;
 	private String companyState;
-	private String keywords;
+	private String[] keyword;
 	private String sizhongTag;
 	private String companyAddress;
 	@Column(columnDefinition="TEXT")
@@ -111,11 +111,11 @@ public class CompanyRegistration {
 	public void setCompanyState(String companyState) {
 		this.companyState = companyState;
 	}
-	public String getKeywords() {
-		return keywords;
+	public String[] getKeyword() {
+		return keyword;
 	}
-	public void setKeywords(String keywords) {
-		this.keywords = keywords;
+	public void setKeyword(String[] keyword) {
+		this.keyword = keyword;
 	}
 	public String getSizhongTag() {
 		return sizhongTag;
