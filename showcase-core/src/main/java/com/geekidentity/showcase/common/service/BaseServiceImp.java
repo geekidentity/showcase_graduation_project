@@ -22,7 +22,6 @@ import com.geekidentity.showcase.common.query.Page;
 public class BaseServiceImp<T> implements BaseService<T> {
 	
 	@Autowired
-	
 	protected BaseDao<T> baseDao;
 	@Override
 	public T get(Serializable id) {

@@ -3,12 +3,16 @@ package com.geekidentity.datacastle.venture.entity;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class VentureProject {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer ids;
 	private String id;
 	private Integer sichuanSichuang;
 	private String companyProgresses;

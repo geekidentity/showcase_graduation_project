@@ -52,7 +52,8 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
-	<tx:annotation-driven transaction-manager="transactionManager"/>
+	<!-- 使用cglib作动态代理 -->
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
 	
 	<!-- 定义事务管理器 -->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">

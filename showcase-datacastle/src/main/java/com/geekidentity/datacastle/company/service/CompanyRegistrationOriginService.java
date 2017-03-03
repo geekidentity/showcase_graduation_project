@@ -31,13 +31,20 @@ public class CompanyRegistrationOriginService implements OriginBaseService<Compa
 		ObjectMapper mapper = new ObjectMapper();
 		Iterator<CompanyRegistrationOrigin> companys;
 		List<CompanyRegistration> registrations = new LinkedList<>();
+		int failed = 0;
 		try {
 			JsonParser jsonParser = factory.createParser(file);
 			companys = mapper.readValues(jsonParser, CompanyRegistrationOrigin.class);
+			
 			while (companys.hasNext()) {
-				CompanyRegistrationOrigin origin = (CompanyRegistrationOrigin) companys.next();
-				CompanyRegistration target = conversionData(origin);
-				registrations.add(target);
+				try {
+					CompanyRegistrationOrigin origin = (CompanyRegistrationOrigin) companys.next();
+					CompanyRegistration target = conversionData(origin);
+					registrations.add(target);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					failed++;
+				}
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -45,6 +52,7 @@ public class CompanyRegistrationOriginService implements OriginBaseService<Compa
 		}
 		
 		companyRegistrationService.batchSave(registrations);
+		System.out.println("failed:" + failed);
 	}
 	
 	@Override
@@ -59,11 +67,12 @@ public class CompanyRegistrationOriginService implements OriginBaseService<Compa
 		target.setCompanyState(origin.getCompany_state());
 		target.setCompanyAddress(origin.getCompany_address());
 		target.setAcceptDate(origin.getAccept_date().get$date());
-		target.setRegisterDate(origin.getRegister_date().get$date());
+		target.setRegisterDate(origin.getRegister_date() == null ? null : origin.getRegister_date().get$date());
 		target.setRegisterCapital(origin.getRegister_capital());
 		target.setSocialInsurance(origin.getSocial_insurance());
 		target.setRegisterGov(origin.getRegister_gov());
 		target.setArtificialPerson(origin.getArtificial_person());
+		target.setHousingFund(origin.getHousing_fund());
 		return target;
 	}
 

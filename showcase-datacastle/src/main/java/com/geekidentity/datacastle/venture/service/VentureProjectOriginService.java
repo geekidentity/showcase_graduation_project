@@ -8,7 +8,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
@@ -19,8 +21,12 @@ import com.geekidentity.datacastle.venture.model.VentureProjectOrigin;
 import com.geekidentity.showcase.util.BeanUtil;
 
 @Service
+@Transactional
 public class VentureProjectOriginService implements OriginBaseService<VentureProjectOrigin, VentureProject> {
 
+	@Autowired
+	private VentureProjectService ventureProjectService;
+	
 	@Override
 	public void importOriginData(File file) {
 		JsonFactory factory = new JsonFactory();
@@ -40,12 +46,14 @@ public class VentureProjectOriginService implements OriginBaseService<VenturePro
 					failed++;
 				}
 			}
+			
 			System.out.println(projects.size());
 			System.out.println(failed);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		ventureProjectService.batchSave(projects);
 		
 	}
 
