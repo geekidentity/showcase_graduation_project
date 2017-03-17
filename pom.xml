@@ -55,6 +55,16 @@
 				<artifactId>showcase-biz-hibernate</artifactId>
 				<version>${showcase.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>com.geekidentity</groupId>
+				<artifactId>showcase-datacastle-biz</artifactId>
+				<version>${showcase.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.geekidentity</groupId>
+				<artifactId>showcase-datacastle-biz-api</artifactId>
+				<version>${showcase.version}</version>
+			</dependency>
 			<!-- showcase END -->
 
 			<!-- Spring BEGIN -->
