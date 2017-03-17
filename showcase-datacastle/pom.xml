@@ -19,6 +19,10 @@
 			<artifactId>showcase-core</artifactId>
 			<version>${showcase.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.geekidentity</groupId>
+			<artifactId>showcase-datacastle-biz-api</artifactId>
+		</dependency>
 		<!-- Spring BEGIN -->
 		<dependency>
 			<groupId>org.springframework</groupId>
