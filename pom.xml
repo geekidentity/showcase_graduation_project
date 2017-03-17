@@ -8,6 +8,13 @@
 	<packaging>pom</packaging>
 	<description>聚合POM，</description>
 
+	<!-- Inherit defaults from Spring Boot -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.2.RELEASE</version>
+	</parent>
+
 	<properties>
 		<mybatis.version>3.4.2</mybatis.version>
 		<showcase.version>0.0.1-SNAPSHOT</showcase.version>
@@ -239,9 +246,9 @@
 		<module>showcase-biz-api</module>
 		<module>showcase-web</module>
 		<module>showcase-biz-mybatis</module>
-
 		<module>showcase-datacastle</module>
 		<module>showcase-excel</module>
 		<module>showcase-core</module>
+		<module>showcase-datacastle-web</module>
 	</modules>
 </project>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.geekidentity</groupId>
+		<artifactId>showcase</artifactId>
+		<version>${showcase.version}</version>
+	</parent>
+	<artifactId>showcase-datacastle-web</artifactId>
+	<packaging>war</packaging>
+	<name>showcase-datacastle-web Maven Webapp</name>
+	<url>http://geekidentity.com</url>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>showcase-datacastle-web</finalName>
+	</build>
+</project>
