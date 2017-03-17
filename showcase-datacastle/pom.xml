@@ -6,7 +6,7 @@
 		<artifactId>showcase</artifactId>
 		<version>${showcase.version}</version>
 	</parent>
-	<artifactId>showcase-datacastle</artifactId>
+	<artifactId>showcase-datacastle-biz</artifactId>
 
 	<dependencies>
 		<dependency>
@@ -86,6 +86,15 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+		</dependency>
+
 
 		<!-- Tools END -->
 

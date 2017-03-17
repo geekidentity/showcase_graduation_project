@@ -226,7 +226,6 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -246,7 +245,7 @@
 		<module>showcase-biz-api</module>
 		<module>showcase-web</module>
 		<module>showcase-biz-mybatis</module>
-		<module>showcase-datacastle</module>
+		<module>showcase-datacastle-biz</module>
 		<module>showcase-excel</module>
 		<module>showcase-core</module>
 		<module>showcase-datacastle-web</module>
