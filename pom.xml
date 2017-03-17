@@ -249,5 +249,6 @@
 		<module>showcase-excel</module>
 		<module>showcase-core</module>
 		<module>showcase-datacastle-web</module>
+		<module>showcase-datacastle-biz-api</module>
 	</modules>
 </project>
