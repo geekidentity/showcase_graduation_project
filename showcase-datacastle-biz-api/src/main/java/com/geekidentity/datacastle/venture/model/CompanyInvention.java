@@ -1,8 +1,12 @@
 package com.geekidentity.datacastle.venture.model;
 
-import java.util.Date;
+import java.io.Serializable;
 
-public class CompanyInvention {
+public class CompanyInvention implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5236211186078365575L;
 	private String 融资金额;
 	private String 投资方;
 	private String 阶段;

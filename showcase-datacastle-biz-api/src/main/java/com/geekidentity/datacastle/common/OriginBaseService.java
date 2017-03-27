@@ -17,7 +17,7 @@ public interface OriginBaseService<ORIGIN, TARGET> {
 	 * 将文件中数据导入数据库
 	 * @param file 
 	 */
-	void importOriginData(File file);
+	void insertOriginData(File file);
 	
 	/**
 	 * 将原始数据处理成格式化数据

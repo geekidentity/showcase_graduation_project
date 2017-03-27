@@ -1,6 +1,5 @@
 package com.geekidentity.datacastle.venture.model;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -9,12 +8,12 @@ import com.geekidentity.datacastle.company.model.Id;
 public class VentureProjectOrigin {
 	private Id _id;
 	private Integer sichuan_sichuang;
-	private List<String> company_progress;
+	private String[] company_progress;
 	private String company_type;
 	private String create_time;
 	private Integer finance_value;
-	private List<String> stockholder;
-	private List<String> keywords;
+	private String[] stockholder;
+	private String[] keywords;
 	private String registration_code;
 	private String source;
 	private String company_name;
@@ -30,7 +29,7 @@ public class VentureProjectOrigin {
 	private String industry;
 	private Date company_start;
 	private String company_state;
-	private List<CompanyInvention> company_invention;
+	private CompanyInvention[] company_invention;
 	private String company_address;
 	private String source_id;
 	private List<String> competitor;
@@ -46,10 +45,11 @@ public class VentureProjectOrigin {
 	public void setSichuan_sichuang(Integer sichuan_sichuang) {
 		this.sichuan_sichuang = sichuan_sichuang;
 	}
-	public List<String> getCompany_progress() {
-		return company_progress == null ? new ArrayList<String>() : company_progress;
+	
+	public String[] getCompany_progress() {
+		return company_progress;
 	}
-	public void setCompany_progress(List<String> company_progress) {
+	public void setCompany_progress(String[] company_progress) {
 		this.company_progress = company_progress;
 	}
 	public String getCompany_type() {
@@ -71,16 +71,17 @@ public class VentureProjectOrigin {
 	public void setFinance_value(Integer finance_value) {
 		this.finance_value = finance_value;
 	}
-	public List<String> getStockholder() {
+	
+	public String[] getStockholder() {
 		return stockholder;
 	}
-	public void setStockholder(List<String> stockholder) {
+	public void setStockholder(String[] stockholder) {
 		this.stockholder = stockholder;
 	}
-	public List<String> getKeywords() {
-		return keywords==null ? new ArrayList<>() : keywords;
+	public String[] getKeywords() {
+		return keywords;
 	}
-	public void setKeywords(List<String> keywords) {
+	public void setKeywords(String[] keywords) {
 		this.keywords = keywords;
 	}
 	public String getRegistration_code() {
@@ -174,10 +175,10 @@ public class VentureProjectOrigin {
 		this.company_state = company_state;
 	}
 	
-	public List<CompanyInvention> getCompany_invention() {
+	public CompanyInvention[] getCompany_invention() {
 		return company_invention;
 	}
-	public void setCompany_invention(List<CompanyInvention> company_invention) {
+	public void setCompany_invention(CompanyInvention[] company_invention) {
 		this.company_invention = company_invention;
 	}
 	public String getCompany_address() {

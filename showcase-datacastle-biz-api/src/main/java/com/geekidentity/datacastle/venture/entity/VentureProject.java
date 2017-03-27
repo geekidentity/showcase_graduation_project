@@ -1,26 +1,29 @@
 package com.geekidentity.datacastle.venture.entity;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import com.geekidentity.datacastle.venture.model.CompanyInvention;
 
 @Entity
 public class VentureProject {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer ids;
 	private String id;
 	private Integer sichuanSichuang;
-	private String companyProgresses;
+	@Column(columnDefinition="BLOB")
+	private String[] companyProgress;
 	private String companyType;
 	private Date createTime;
-	private Integer financeValue;
-	private String stockholders;
-	private String keywords;
+	private BigDecimal financeValue;
+	@Column(columnDefinition="BLOB")
+	private String[] stockholder;
+	@Column(columnDefinition="BLOB")
+	private String[] keywords;
 	private String registrationCode;
 	private String source;
 	private String companyName;
@@ -31,17 +34,29 @@ public class VentureProject {
 	private String distinctId;
 	private Date crawlTime;
 	private String address;
-	private Integer companyMoney;
+	private BigDecimal companyMoney;
 	private String companyPerson;
 	private String industry;
 	private Date companyStart;
 	private String companyState;
-	private String financingAmount;
-	private String investor;
-	private String stage;
-	private String financingTime;
 	private String companyAddress;
 	private String sourceId;
+	private Integer companyInventionCount;
+	@Column(columnDefinition="BLOB")
+	private CompanyInvention[] companyInvention;
+	
+	public CompanyInvention[] getCompanyInvention() {
+		return companyInvention;
+	}
+	public void setCompanyInvention(CompanyInvention[] companyInvention) {
+		this.companyInvention = companyInvention;
+	}
+	public Integer getCompanyInventionCount() {
+		return companyInventionCount;
+	}
+	public void setCompanyInventionCount(Integer companyInventionCount) {
+		this.companyInventionCount = companyInventionCount;
+	}
 	public String getId() {
 		return id;
 	}
@@ -54,6 +69,18 @@ public class VentureProject {
 	public void setSichuanSichuang(Integer sichuanSichuang) {
 		this.sichuanSichuang = sichuanSichuang;
 	}
+	public Date getCreateTime() {
+		return createTime;
+	}
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+	public BigDecimal getFinanceValue() {
+		return financeValue;
+	}
+	public void setFinanceValue(BigDecimal financeValue) {
+		this.financeValue = financeValue;
+	}
 	
 	public String getCompanyType() {
 		return companyType;
@@ -61,35 +88,23 @@ public class VentureProject {
 	public void setCompanyType(String companyType) {
 		this.companyType = companyType;
 	}
-	public Date getCreateTime() {
-		return createTime;
-	}
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-	public Integer getFinanceValue() {
-		return financeValue;
-	}
-	public void setFinanceValue(Integer financeValue) {
-		this.financeValue = financeValue;
-	}
 
-	public String getCompanyProgresses() {
-		return companyProgresses;
+	public String[] getCompanyProgress() {
+		return companyProgress;
 	}
-	public void setCompanyProgresses(String companyProgresses) {
-		this.companyProgresses = companyProgresses;
+	public void setCompanyProgress(String[] companyProgress) {
+		this.companyProgress = companyProgress;
 	}
-	public String getStockholders() {
-		return stockholders;
+	public String[] getStockholder() {
+		return stockholder;
 	}
-	public void setStockholders(String stockholders) {
-		this.stockholders = stockholders;
+	public void setStockholder(String[] stockholder) {
+		this.stockholder = stockholder;
 	}
-	public String getKeywords() {
+	public String[] getKeywords() {
 		return keywords;
 	}
-	public void setKeywords(String keywords) {
+	public void setKeywords(String[] keywords) {
 		this.keywords = keywords;
 	}
 	public String getRegistrationCode() {
@@ -152,10 +167,10 @@ public class VentureProject {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public Integer getCompanyMoney() {
+	public BigDecimal getCompanyMoney() {
 		return companyMoney;
 	}
-	public void setCompanyMoney(Integer companyMoney) {
+	public void setCompanyMoney(BigDecimal companyMoney) {
 		this.companyMoney = companyMoney;
 	}
 	public String getCompanyPerson() {
@@ -181,31 +196,6 @@ public class VentureProject {
 	}
 	public void setCompanyState(String companyState) {
 		this.companyState = companyState;
-	}
-	
-	public String getFinancingAmount() {
-		return financingAmount;
-	}
-	public void setFinancingAmount(String financingAmount) {
-		this.financingAmount = financingAmount;
-	}
-	public String getInvestor() {
-		return investor;
-	}
-	public void setInvestor(String investor) {
-		this.investor = investor;
-	}
-	public String getStage() {
-		return stage;
-	}
-	public void setStage(String stage) {
-		this.stage = stage;
-	}
-	public String getFinancingTime() {
-		return financingTime;
-	}
-	public void setFinancingTime(String financingTime) {
-		this.financingTime = financingTime;
 	}
 	public String getCompanyAddress() {
 		return companyAddress;

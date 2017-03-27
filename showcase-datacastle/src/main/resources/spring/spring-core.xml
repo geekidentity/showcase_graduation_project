@@ -10,6 +10,7 @@
 
 	<!-- 使用注解自动注册和注入Bean， -->
 	<context:component-scan base-package="com.geekidentity.datacastle">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 
 	<context:property-placeholder location="classpath*:app.properties" />

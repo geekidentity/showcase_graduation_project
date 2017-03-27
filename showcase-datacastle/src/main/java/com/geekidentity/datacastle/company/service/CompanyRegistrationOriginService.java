@@ -26,7 +26,7 @@ public class CompanyRegistrationOriginService implements OriginBaseService<Compa
 	private CompanyRegistrationService companyRegistrationService;
 	
 	@Override
-	public void importOriginData(File file) {
+	public void insertOriginData(File file) {
 		JsonFactory factory = new JsonFactory();
 		ObjectMapper mapper = new ObjectMapper();
 		Iterator<CompanyRegistrationOrigin> companys;

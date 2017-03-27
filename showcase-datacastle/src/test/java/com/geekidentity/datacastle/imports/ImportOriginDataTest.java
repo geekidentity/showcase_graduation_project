@@ -23,7 +23,7 @@ public class ImportOriginDataTest extends TestBase {
 	
 	@Autowired
 	private HouseOriginService houseOriginService;
-	//@Autowired
+	@Autowired
 	private VentureProjectOriginService ventureProjectOriginService;
 	@Autowired
 	private CompanyRegistrationOriginService companyRegistrationOriginService;
@@ -38,10 +38,12 @@ public class ImportOriginDataTest extends TestBase {
 		projectTenderService.insertFromTxt(file);
 	}
 	
-	//@Test
+	// done
+	@Test
+	@Ignore
 	public void ventureProjectOriginImportTest() {
 		File file = new File("f:/智慧中国杯/创业项目.json");
-		ventureProjectOriginService.importOriginData(file);
+		ventureProjectOriginService.insertOriginData(file);
 	}
 	
 	// done
@@ -61,6 +63,6 @@ public class ImportOriginDataTest extends TestBase {
 	@Ignore
 	public void CompanyRegistrationOriginTest() {
 		File file = new File("f:/智慧中国杯/公司注册.json");
-		companyRegistrationOriginService.importOriginData(file);
+		companyRegistrationOriginService.insertOriginData(file);
 	}
 }
