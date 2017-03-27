@@ -1,12 +1,37 @@
 package com.geekidentity.datacastle.preliminary.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity(name="user_info_train")
 public class UserInfo {
+
+	//用户id
+	@Id
 	private Integer id;
+	//性别
 	private Integer gender;
+	//职业
 	private Integer occupation;
+	//教育程度
 	private Integer education;
+	//婚姻状态
 	private Integer maritalStatus;
+	//户口类型
 	private Integer accountType;
+	
+	public UserInfo() {}
+	
+	public UserInfo(Integer id, Integer gender, Integer occupation, Integer education, Integer maritalStatus,
+			Integer accountType) {
+		this.id = id;
+		this.gender = gender;
+		this.occupation = occupation;
+		this.education = education;
+		this.maritalStatus = maritalStatus;
+		this.accountType = accountType;
+	}
+
 	public Integer getId() {
 		return id;
 	}

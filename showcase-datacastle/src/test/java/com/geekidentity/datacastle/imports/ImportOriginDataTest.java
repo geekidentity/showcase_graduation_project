@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.geekidentity.datacastle.company.service.CompanyRegistrationOriginService;
 import com.geekidentity.datacastle.house.entity.HouseOrigin;
 import com.geekidentity.datacastle.house.service.HouseOriginService;
+import com.geekidentity.datacastle.preliminary.service.UserInfoService;
 import com.geekidentity.datacastle.tender.service.ProjectTenderService;
 import com.geekidentity.datacastle.test.TestBase;
 import com.geekidentity.datacastle.venture.service.VentureProjectOriginService;
@@ -29,6 +30,16 @@ public class ImportOriginDataTest extends TestBase {
 	private CompanyRegistrationOriginService companyRegistrationOriginService;
 	@Autowired
 	private ProjectTenderService projectTenderService;
+	@Autowired
+	private UserInfoService userInfoService;
+	
+	// done
+	@Test
+	@Ignore
+	public void insertUserInfoTrainTest() {
+		File file = new File("F:/智慧中国杯/个人征信/train/user_info_train.txt");
+		userInfoService.importData(file);;
+	}
 	
 	// done
 	@Test
