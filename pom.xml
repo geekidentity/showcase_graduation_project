@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.geekidentity</groupId>
 	<artifactId>showcase</artifactId>
@@ -197,6 +196,13 @@
 				<artifactId>logback-classic</artifactId>
 				<version>1.2.1</version>
 			</dependency>
+			<!-- 把Spring源代码中大量使用到的commons-logging替换成slf4j，只有在添加了这个依赖之后才能看到Spring框架本身打印的日志，否则只能看到自己打印的日志 -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>1.7.24</version>
+			</dependency>
+
 			<!-- Log END -->
 
 
@@ -260,5 +266,6 @@
 		<module>showcase-core</module>
 		<module>showcase-datacastle-web</module>
 		<module>showcase-datacastle-biz-api</module>
-	</modules>
+    <module>showcase-websocket</module>
+  </modules>
 </project>
