@@ -12,7 +12,7 @@
 			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
 		</encoder>
  		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-			<level>ERROR</level>
+			<level>debug</level>
 		</filter>
 	</appender>
 
@@ -26,22 +26,6 @@
 			<FileNamePattern>${logHome}/${contextName}.%d{yyyyMMdd}.log</FileNamePattern>
 			<MaxHistory>10</MaxHistory>
 		</rollingPolicy>
-	</appender>
-
-	<!-- 输出到Logstash -->
-	<appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-		<encoder class="net.logstash.logback.encoder.LogstashEncoder">
-			<customFields>{"app":"${contextName}"}</customFields>
-		</encoder>
-		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-			<level>ERROR</level>
-		</filter>
-		<destination>127.0.0.1:4560</destination>
-	</appender>
-	
-	<appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
-		<discardingThreshold>0</discardingThreshold>
-		<appender-ref ref="FILE" />
 	</appender>
 	
 <!--  	<logger name="org.apache.ibatis" level="DEBUG">
@@ -58,7 +42,7 @@
 	
 	
 	
-	<root level="ERROR">
+	<root level="debug">
 		<appender-ref ref="STDOUT" />
 		<!-- <appender-ref ref="LOGSTASH" />
 		<appender-ref ref="ASYNC" /> -->

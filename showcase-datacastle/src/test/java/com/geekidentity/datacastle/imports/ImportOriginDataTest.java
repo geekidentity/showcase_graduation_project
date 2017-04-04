@@ -1,10 +1,6 @@
 package com.geekidentity.datacastle.imports;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Ignore;
@@ -14,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.geekidentity.datacastle.company.service.CompanyRegistrationOriginService;
 import com.geekidentity.datacastle.house.entity.HouseOrigin;
 import com.geekidentity.datacastle.house.service.HouseOriginService;
+import com.geekidentity.datacastle.preliminary.service.BankDetailService;
 import com.geekidentity.datacastle.preliminary.service.UserInfoService;
 import com.geekidentity.datacastle.tender.service.ProjectTenderService;
 import com.geekidentity.datacastle.test.TestBase;
@@ -32,6 +29,14 @@ public class ImportOriginDataTest extends TestBase {
 	private ProjectTenderService projectTenderService;
 	@Autowired
 	private UserInfoService userInfoService;
+	@Autowired
+	private BankDetailService bankDetailService;
+	
+	@Test
+	public void insertBankDetailTrainTest() {
+		File file = new File("F:/智慧中国杯/个人征信/train/bank_detail_train.txt");
+		bankDetailService.importData(file);
+	}
 	
 	// done
 	@Test
