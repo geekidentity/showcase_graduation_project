@@ -13,6 +13,7 @@ import com.geekidentity.datacastle.house.service.HouseOriginService;
 import com.geekidentity.datacastle.preliminary.service.BankDetailService;
 import com.geekidentity.datacastle.preliminary.service.BillDetailService;
 import com.geekidentity.datacastle.preliminary.service.BrowseHistoryService;
+import com.geekidentity.datacastle.preliminary.service.LoanTimeService;
 import com.geekidentity.datacastle.preliminary.service.UserInfoService;
 import com.geekidentity.datacastle.tender.service.ProjectTenderService;
 import com.geekidentity.datacastle.test.TestBase;
@@ -37,8 +38,18 @@ public class ImportOriginDataTest extends TestBase {
 	private BrowseHistoryService browseHistoryService;
 	@Autowired
 	private BillDetailService billDetailService;
+	@Autowired
+	private LoanTimeService loanTimeService;
 	
 	@Test
+	public void insertLoanTimeTrainTest() {
+		File file = new File("F:/智慧中国杯/个人征信/train/loan_time_train.txt");
+		loanTimeService.importData(file);
+	}
+	
+	// done
+	@Test
+	@Ignore
 	public void insertBillDetailTrainTest() {
 		File file = new File("F:/智慧中国杯/个人征信/train/bill_detail_train.txt");
 		billDetailService.importData(file);
