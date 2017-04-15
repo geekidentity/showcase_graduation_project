@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.geekidentity.datacastle.preliminary.entity.LoanTime;
+import com.geekidentity.datacastle.preliminary.entity.LoanTimeDailyModel;
 import com.geekidentity.showcase.common.service.BaseServiceImp;
 
 /**
@@ -60,5 +61,12 @@ public class LoanTimeServiceImp extends BaseServiceImp<LoanTime> implements Loan
 			}
 		}
 		baseDao.batchSave(loanTimes);
+	}
+
+	@Override
+	public List<LoanTimeDailyModel> dailyData() {
+		String sql = "SELECT loanTime, count(*) FROM datacastle.loan_time_train group by loanTime;";
+		List<LoanTimeDailyModel> result = baseDao.findBySqlOfCustomizeType(sql);
+		return result;
 	}
 }

@@ -9,6 +9,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.NativeQuery;
 import org.hibernate.sql.QuerySelect;
 import org.hibernate.type.Type;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -308,6 +309,12 @@ public abstract class BaseDaoImp<T> extends HibernateDaoSupport implements BaseD
 	public void evict(Serializable id) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public <TYPE> List<TYPE> findBySqlOfCustomizeType(String sql) {
+		Session session = currentSession();
+		NativeQuery<TYPE> query = session.createNativeQuery(sql);
+		return query.getResultList();
 	}
 
 }

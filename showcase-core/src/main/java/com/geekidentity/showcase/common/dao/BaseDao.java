@@ -263,6 +263,13 @@ public interface BaseDao<T> {
 	 * @return 符合条件的对象链表
 	 */
 	public List<T> findBySql(String sql);
+	
+	/**
+	 * 根据sql查询一组对象
+	 * @param sql
+	 * @return
+	 */
+	<TYPE> List<TYPE> findBySqlOfCustomizeType(String sql);
 
 	/**
 	 * 根据SQL进行分页查询，可查询非本泛型的对象

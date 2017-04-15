@@ -11,7 +11,6 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.geekidentity.datacastle.preliminary.entity.BankDetail;
 import com.geekidentity.datacastle.preliminary.entity.BillDetail;
 import com.geekidentity.showcase.common.service.BaseServiceImp;
 
