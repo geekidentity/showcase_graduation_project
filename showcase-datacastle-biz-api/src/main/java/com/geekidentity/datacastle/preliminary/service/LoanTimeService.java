@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.List;
 
 import com.geekidentity.datacastle.preliminary.entity.LoanTime;
-import com.geekidentity.datacastle.preliminary.entity.LoanTimeDailyModel;
+import com.geekidentity.datacastle.preliminary.model.LoanTimeDailyModel;
 import com.geekidentity.showcase.common.service.BaseService;
 
 public interface LoanTimeService extends BaseService<LoanTime> {
@@ -20,4 +20,10 @@ public interface LoanTimeService extends BaseService<LoanTime> {
 	 * @return
 	 */
 	List<LoanTimeDailyModel> dailyData();
+	
+	/**
+	 * 获取所有放贷时间列表
+	 * @return
+	 */
+	List<Long> getAllLoanTime();
 }

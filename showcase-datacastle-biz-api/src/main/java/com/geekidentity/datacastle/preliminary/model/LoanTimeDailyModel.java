@@ -1,4 +1,4 @@
-package com.geekidentity.datacastle.preliminary.entity;
+package com.geekidentity.datacastle.preliminary.model;
 
 /**
  * 每天放贷数量模型

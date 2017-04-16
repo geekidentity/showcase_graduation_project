@@ -7,7 +7,7 @@ import java.util.List;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.geekidentity.datacastle.preliminary.entity.LoanTimeDailyModel;
+import com.geekidentity.datacastle.preliminary.model.LoanTimeDailyModel;
 import com.geekidentity.datacastle.test.TestBase;
 
 public class LoanTimeServiceTest extends TestBase {

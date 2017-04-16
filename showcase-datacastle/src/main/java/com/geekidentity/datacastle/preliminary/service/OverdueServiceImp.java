@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.geekidentity.datacastle.preliminary.entity.Overdue;
-
+import com.geekidentity.datacastle.preliminary.model.OverdueRateModel;
 import com.geekidentity.showcase.common.service.BaseServiceImp;
 
 /**
@@ -25,6 +25,7 @@ import com.geekidentity.showcase.common.service.BaseServiceImp;
 @Service
 @Transactional
 public class OverdueServiceImp extends BaseServiceImp<Overdue> implements OverdueService {
+	
 	@Override
 	public void importData(File file) {
 		List<Overdue> overdues = new ArrayList<>(14000);
@@ -61,4 +62,12 @@ public class OverdueServiceImp extends BaseServiceImp<Overdue> implements Overdu
 		}
 		baseDao.batchSave(overdues);
 	}
+
+	@Override
+	public List<OverdueRateModel> overdueRate() {
+		String sql = "SELECT loanTime, truncate(count(case when overdue = 1 then 1 else null end) / count(overdue), 4) as rate FROM datacastle.overdue_train o left join loan_time_train l on o.uId = l.uId group by loanTime;";
+		List<OverdueRateModel> result = baseDao.findBySqlOfCustomizeType(sql);
+		return result;
+	}
+
 }

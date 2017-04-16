@@ -20,6 +20,7 @@ public class LoanTime {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private Integer uId;
+	//样本标签为1，表示逾期30天以上；样本标签为0，表示逾期10天以内
 	private Long loanTime;
 	
 	public LoanTime() {}
